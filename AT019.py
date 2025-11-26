@@ -12,6 +12,14 @@ class Monstro(Personagem):
     def criar_chefao(cls):
         return cls("Rei Goblin", 200, 40)
     
+    def esta_vivo(self):
+        # Retorna True se a vida for maior que 0
+        # Retorna False se for 0
+        if self.get_vida() > 0:
+            return True
+        else:
+            return False
+    
 monstro1 = Monstro.criar_goblin()
 monstro2 = Monstro.criar_goblin()
 monstro3 = Monstro.criar_goblin()

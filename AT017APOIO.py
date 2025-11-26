@@ -21,6 +21,17 @@ class Personagem:
     def receber_dano(self, dano):
         vida_restante = self.__vida - dano 
         self.set_vida(vida_restante)
+    def atacar(self, alvo):
+        dano = self.força
+        print(f"⚔️ {self.nome} atacou {alvo.nome}!")
+        
+        # O alvo precisa ter o método receber_dano
+        # Se der erro aqui depois, verificaremos se o Monstro tem receber_dano
+        if hasattr(alvo, 'receber_dano'):
+            alvo.receber_dano(dano)
+        else:
+            print(f"(Erro: {alvo.nome} não sabe receber dano)")
+    
 
 #ignore:
 
